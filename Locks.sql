@@ -1,6 +1,7 @@
 USE txn_lablast;
 
 -- Shared Locks
+-- Session A is workbench, Session B is CLI
 -- Multiple txn can hold a shared lock on same row but cant do any DML on it unless the other releases their locks
 
 START TRANSACTION;
