@@ -1,4 +1,14 @@
+CREATE DATABASE IF NOT EXISTS txn_lablast;
 USE txn_lablast;
+
+-- Create the table
+CREATE TABLE bank_accounts (
+    account_id    INT PRIMARY KEY AUTO_INCREMENT,
+    account_name  VARCHAR(50) NOT NULL,
+    account_type  ENUM('savings', 'current') DEFAULT 'savings',
+    balance       DECIMAL(10, 2) NOT NULL DEFAULT 0.00,
+    created_at    DATETIME DEFAULT CURRENT_TIMESTAMP
+);
 
 -- Read Uncommitted 
 -- Session A uncommitted data Workbench B is CLI which will do dirty read
